@@ -5,5 +5,4 @@ function Card({ userName = "Rohan" }) {
         <h2>I am {userName}</h2>
     )
 }
-
 export default Card
