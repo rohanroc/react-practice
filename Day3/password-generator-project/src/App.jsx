@@ -48,7 +48,7 @@ function App() {
           </div>
           <div className='flex items-center gap-x-1'>
             <input type="checkbox"
-              defaultValue={numAllowed} // h
+              defaultValue={numAllowed}
               onChange={() => {
                 setNumAllowed((prev) => !prev);
               }}
