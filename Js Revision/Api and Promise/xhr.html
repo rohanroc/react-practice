@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Api</title>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <p>Bio in github of arijit is : <span id="follower"></span></p>
+    <img src="" alt="" id="avatar">
+</body>
+<script>
+    const follower = document.getElementById("follower");
+    const avatar = document.getElementById("avatar");
+    const url = "https://api.github.com/users/rohanroc";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(data.bio);
+            follower.innerHTML = data.bio;
+            avatar.src = data.avatar_url;
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
